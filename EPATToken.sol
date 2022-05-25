@@ -11,8 +11,8 @@ contract EPATToken is ERC20, Ownable {
 	Users make mistake by transfering usdt/usdt ... to contract address. 
 	This function allows contract owner to withdraw those tokens and send back to users.
 	*/
-	function rescueStuckErc20(address _token) external onlyOwner {
-		uint256 _amount = ERC20(_token).balanceOf(address(this));
-		ERC20(_token).transfer(owner(), _amount);
+	function rescueStuckErc20(address contract) external onlyOwner {
+		uint256 amount = ERC20(contract).balanceOf(address(this));
+		ERC20(contract).transfer(owner(), amount);
 	}
 }
