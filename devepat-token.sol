@@ -26,7 +26,6 @@ contract DevePatToken is IERC20 {
         emit Transfer(address(0), msg.sender, totalSupply);
     }
 
-
     function balanceOf(address account) public view virtual override returns (uint256) {
         return _balances[account];
     }
